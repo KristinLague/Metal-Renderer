@@ -5,7 +5,6 @@
 //  Created by Kristin Lague on 14/12/2024.
 //
 
-#pragma once
 #include "app_delegate.h"
 
 AppDelegate::~AppDelegate(){
@@ -34,7 +33,7 @@ void AppDelegate::applicationDidFinishLaunching(NS::Notification* notification)
     device = MTL::CreateSystemDefaultDevice();
     
     mtkView = MTK::View::alloc()->init(frame,device);
-    mtkView->setColorPixelFormat(MTL::PixelFormatR8Unorm_sRGB);
+    mtkView->setColorPixelFormat(MTL::PixelFormatBGRA8Unorm_sRGB);
     mtkView->setClearColor(MTL::ClearColor::Make(1.0,0.0,0.0,1.0));
     
     viewDelegate = new ViewDelegate(device);
